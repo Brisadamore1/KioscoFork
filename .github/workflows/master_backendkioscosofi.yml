@@ -51,9 +51,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_A384B2084AE14023A393990B1924AE45 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_3B67272413414AD5AA57CEE718F7BEA7 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_3F2D545C6C9C4B439E1A013A154DCCFD }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_941eeb22-1d49-49b9-8c63-f7c54988074f }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_8dacdb05-c781-4f3b-8c8c-495f39b2e282 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_d9204186-e64f-4d9e-9cc6-da4c4ca83f20 }}
 
       - name: Set environment variable in Azure App Service
         uses: Azure/appservice-settings@v1
