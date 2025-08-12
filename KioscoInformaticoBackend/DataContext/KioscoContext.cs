@@ -305,8 +305,6 @@ public partial class KioscoContext : DbContext
 
 
 
-
-
     }
 
 
