@@ -23,6 +23,7 @@ namespace Backend.Controllers
         public IActionResult Login([FromBody] LoginModel model)
         {
             // Aquí deberías implementar la validación de credenciales
+
             // Por ejemplo, buscar en la base de datos y verificar el password
             if (model.Username != "admin" || model.Password != "123456")
             {
