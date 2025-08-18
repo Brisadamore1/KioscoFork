@@ -126,6 +126,7 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 // Configurar una política de CORS
+
 // Configurar una política de CORS
 builder.Services.AddCors(options =>
 {
