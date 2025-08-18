@@ -66,8 +66,11 @@ builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 
 var configuration = new ConfigurationBuilder()
-        .AddJsonFile("appsettings.json")
+        .SetBasePath(Directory.GetCurrentDirectory())
+        .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+        .AddEnvironmentVariables()
         .Build();
+
 string cadenaConexion = configuration.GetConnectionString("mysqlRemoto");
 
 
@@ -92,10 +95,9 @@ builder.Services.AddControllers()
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen(c =>
 {
-
-
     // Agregar esquema de seguridad JWT
     c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
     {
@@ -130,8 +132,8 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowSpecificOrigins",
         builder => builder
             .WithOrigins("https://backendkioscobri.azurewebsites.net/",
-                    "https://backendkioscobri.azurewebsites.net",
-                    "https://localhost:7190")
+                    "https://www.backendkioscobri.azurewebsites.net/",
+                    "https://localhost:7238")
             .AllowAnyHeader()
             .AllowAnyMethod());
 });
