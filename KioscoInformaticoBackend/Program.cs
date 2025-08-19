@@ -135,6 +135,7 @@ builder.Services.AddCors(options =>
             .WithOrigins("https://kioscobri.azurewebsites.net/",
                     "https://www.kioscobri.azurewebsites.net/",
                     "https://localhost:7238",
+                    "https://localhost:7190",
                     "https://localhost:5091")
             .AllowAnyHeader()
             .AllowAnyMethod());
