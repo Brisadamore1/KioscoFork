@@ -132,8 +132,8 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigins",
         builder => builder
-            .WithOrigins("https://backendkioscobri.azurewebsites.net/",
-                    "https://www.backendkioscobri.azurewebsites.net/",
+            .WithOrigins("https://kioscobri.azurewebsites.net/",
+                    "https://www.kioscobri.azurewebsites.net/",
                     "https://localhost:7238",
                     "https://localhost:5091")
             .AllowAnyHeader()
