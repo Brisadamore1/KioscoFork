@@ -75,6 +75,7 @@ string cadenaConexion = configuration.GetConnectionString("mysqlRemoto");
 
 
 //configuración de inyección de dependencias del DBContext
+
 builder.Services.AddDbContext<KioscoContext>(
     options => options.UseMySql(cadenaConexion,
                                 ServerVersion.AutoDetect(cadenaConexion),
