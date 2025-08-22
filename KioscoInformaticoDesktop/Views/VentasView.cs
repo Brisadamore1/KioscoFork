@@ -92,6 +92,7 @@ namespace KioscoInformaticoDesktop.Views
         private void ActualizarTotalFactura()
         {
             //calculamos el total de la venta sumando los subtotales de los detalles
+
             numericTotal.Value = venta.DetallesVenta.Sum(dv => dv.Cantidad * dv.PrecioUnitario);
         }
 
