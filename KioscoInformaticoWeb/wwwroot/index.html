@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KioscoInformaticoWeb</title>
     <base href="/" />
+    <link rel="manifest" href="manifest.json">
+    <script src="pwa-install.js"></script>
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="icon" type="image/png" href="favicon.png" />
@@ -40,7 +42,7 @@
             messagingSenderId: "80805588827",
             appId: "1:80805588827:web:a7f38b1766efc96178747e"
         };
-    
+
         firebase.initializeApp(firebaseConfig);
         console.log(firebase);
         window.firebaseAuth = {
@@ -66,21 +68,21 @@
                     });
                     return userCredential.user.uid;
                     // Enviar correo de verificación
-                            //user.sendEmailVerification()
-                            //    .then(() => {
-                            //        console.log('Correo de verificación enviado.');
-                            //    })
-                            //    .catch((error) => {
-                            //        console.error('Error al enviar el correo de verificación:', error);
-                            //    });
-                       
-                    
+                    //user.sendEmailVerification()
+                    //    .then(() => {
+                    //        console.log('Correo de verificación enviado.');
+                    //    })
+                    //    .catch((error) => {
+                    //        console.error('Error al enviar el correo de verificación:', error);
+                    //    });
+
+
 
                 } catch (error) {
                     console.error("Error en autenticación:", error.message);
                     return null;
                 }
-                
+
             },
 
             signOut: async function () {
@@ -102,6 +104,12 @@
 
     <script src="_framework/blazor.webassembly.js"></script>
     <script src="_content/CurrieTechnologies.Razor.SweetAlert2/sweetAlert2.min.js"></script>
-</body>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(() => console.log('Service Worker registrado.'));
+        }
+    </script>
+</body >
 
-</html>
+</html >
