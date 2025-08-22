@@ -71,6 +71,7 @@ else
         GenericService<object>.jwtToken = jwt;
         isAuthenticated = await AuthService.IsUserAuthenticated();
         StateHasChanged();
+
         //NavigationManager.NavigateTo($"/");
     }
 
