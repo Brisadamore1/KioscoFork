@@ -12,7 +12,6 @@ namespace Service.Services
         protected readonly string _endpoint;
         public static string jwtToken = string.Empty;
 
-
         public GenericService()
         {
             client = new HttpClient();
